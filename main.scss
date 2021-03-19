@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;900&display=swap');
+@import "config";
+@import "vars";
+@import "mixin";
+@import "animation";
+
+body {
+
+    width: 100%;
+    height: 100vh;
+    background-color: #222222;
+    overflow: hidden;
+    @include center-with-flex;
+
+    .wrapper {
+
+        @include center-with-flex;
+        flex-direction: column;
+        width: 30%;
+        height: auto;
+        background-color: rgba(255, 255, 255, .05);
+        z-index: 100;
+        border-radius: 30px;
+        border: 1px solid rgba(255, 255, 255, .2);
+        backdrop-filter: blur(20px);
+        box-shadow: 0px 15px 25px rgba(255, 255, 255, .1);
+
+        h1 {
+
+            margin: 5% 0;
+
+        }
+
+        form {
+
+            width: 100%;
+            @include center-with-flex;
+
+            input {
+
+                margin: 5% 0;
+                background: rgba(255, 255, 255, .1);
+                height: 30px;
+                position: relative;
+                width: 50%;
+                //border: 1px solid rgba(255, 255, 255, .7);
+                border: none;
+                padding-left: 5px;
+                border-radius: 5px;
+    
+            }
+
+            button {
+
+                width: 20%;
+                height: 30px;
+                background: rgba(153 ,242 ,200, .4);
+                cursor: pointer;
+                font-weight: $light;
+                border:none;
+                border-radius: 5px;
+
+            }
+
+            .edit {
+
+                background: rgba(253, 200, 48, .4);
+
+            }
+
+        }
+
+        ul {
+
+            margin: 5% 0%;
+
+            li {
+
+                margin: 2.5% 0%;
+
+                i {
+                    
+                    display: inline-block;
+                    margin: 10px;
+
+                }
+
+                p.whenAdded {
+
+                    font-style: italic;
+                    font-weight: $thin;
+                    font-size: 12px;
+                    opacity: .6;
+    
+                }
+
+                p.what {
+
+                    margin: 10% 0% 1% 0%;
+
+                }
+
+                .fas {
+
+                    cursor: pointer;
+
+                }
+
+                .fa-check-double {
+
+                    color: rgba(185, 43, 39, .3);
+                    transition: all 300ms;
+
+                }
+
+                .fa-check-double:hover {
+
+                    color: rgba(185, 43, 39, .6);
+
+                }
+
+                .fa-trash-alt {
+
+                    color: rgba(21, 101, 192, .3);
+                    transition: all 300ms;
+
+                }
+
+                .fa-trash-alt:hover {
+
+                    color: rgba(21, 101, 192, .6);
+
+                }
+
+                .fa-edit {
+
+                    color: rgba(245, 175, 25, .3);
+                    transition: all 300ms;
+
+                }
+
+                .fa-edit:hover {
+
+                    color: rgba(245, 175, 25, .6);
+
+                }
+    
+            }
+
+        }
+
+    }
+
+    &::after {
+
+        content: '';
+        position: absolute;
+        top: 20%;
+        left: 30%;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background: linear-gradient(#AA076B, #61045F);
+        animation: animation 15s ease-in-out infinite;
+
+    }
+
+    &::before {
+
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 60%;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background: linear-gradient(#f12711, #f5af19);
+        animation: animation 15s ease-in-out infinite;
+        animation-delay: 3s;
+
+    }
+
+}
